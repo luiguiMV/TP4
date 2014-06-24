@@ -5,7 +5,7 @@ p1
 (dp2
 S'habitaciones'
 p3
-V3
+V1
 p4
 sS'precio'
 p5
@@ -13,15 +13,15 @@ V250000
 p6
 sS'banos'
 p7
-V2
+V1
 p8
 sS'correo'
 p9
-Vcartago@cr.com
+Vquinto@quinto.cr
 p10
 sS'ubicacion'
 p11
-V(9.874975316739532, -83.92181396484375)
+V(9.832710031670592, -83.69110107421875)
 p12
 sS'descripcion'
 p13
@@ -34,18 +34,14 @@ p16
 sS'facilidades'
 p17
 (lp18
-VTV
+VLuz
 p19
-aVLuz
-p20
-aVAmueblado
-p21
 asS'telefono'
-p22
+p20
 V555-8888
-p23
+p21
 sS'estacionamientos'
-p24
-V1
-p25
+p22
+V0
+p23
 sba.

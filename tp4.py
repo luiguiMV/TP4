@@ -25,6 +25,8 @@ def home():
 @app.route('/buscar')
 def buscar():
 	return render_template('buscar.html')
+
+
 	
 #pagina para mostrar resultado de la busqueda
 @app.route('/resultado', methods=['POST'])
@@ -59,7 +61,8 @@ Login handler, must accept both GET and POST to be able to use OpenID.
             result.user.update()
         
         # The rest happens inside the template.
-        
+        favoritos= backend.obtener(result.user.name)
+        print favoritos
         return render_template('layout.html', result=result)
     
     # Don't forget to return the response.
@@ -70,6 +73,13 @@ Login handler, must accept both GET and POST to be able to use OpenID.
 @app.route('/publicar')
 def publicar():
 	return render_template('publicar.html')
+
+#pagina para agregar apartamentos
+@app.route('/favoritos', methods=['POST'])
+def favorito():
+	usuario = request.form['user']
+	print usuario
+	return render_template('index.html')
 
 #ruta para obtener los datos de la publicacion
 @app.route('/publicado', methods=['POST'])
@@ -82,7 +92,6 @@ def crearPublicacion():
 	estacionamientos = request.form['estacionamientos']
 	precio = request.form['precio']
 	ubicacion = request.form['posicion']
-	print ubicacion
 	correo = request.form['correo']
 	telefono = request.form['telefono']
 	nuevaPublicacion = backend.publicacion(titulo,descripcion, facilidades, habitaciones, banos, estacionamientos, precio, ubicacion, correo, telefono)

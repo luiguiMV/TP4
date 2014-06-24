@@ -4,6 +4,7 @@ import pickle#libreria utilizado para guardar los objetos en archivos.txt
 
 #variables globales
 listaPublicaciones=[]#lista que contiene objetos publicacion
+listaUsuarios=[] #lista que contiene objetos de usuarios
 
 
 
@@ -31,7 +32,18 @@ class publicacion:
 		listaPublicaciones.append(self)
 		pickle.dump(listaPublicaciones, open("datos/publicaciones.obj", "wb"))
 		
+class usuario:
+	def __init__(self,nombre, favoritos):
+		self.nombre=nombre
+		self.favoritos=favoritos
+	def guardarUsuario(self):
+		listaUsuarios=leerUsuarios()
+		listaUsuarios.append(self)
+		pickle.dump(listaUsuarios,open("datos/usuarios.obj","wb"))
 		
+	def obtenerFavoritos(self):
+			return self.favoritos
+			
 		
 """//////////////////////////////////////////////////////////////
 							FUNCIONES
@@ -80,3 +92,17 @@ def filtrarFacilidad(facilidades, f):
 			return False
 	return True	
 	
+#funcion leerUsuarios
+#Entradas: no tiene
+#Salidas: retorna una lista de objetos publicacion obtenido de un archivo.obj
+def leerUsuarios():
+	try:
+		listaUsuarios = pickle.load(open("datos/usuarios.obj", "rb"))
+		return listaUsuarios
+	except:
+		return []
+def obtener(nombre):
+	for i in listaUsuarios:
+		if i.nombre == nombre:
+			return 	i.favoritos
+	print "Favoritos"

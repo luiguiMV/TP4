@@ -58,5 +58,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
 <h4>Contacto:</h4>
 <h3>Correo: {{ correo }}</h3>
 <h3> Tel&eacute;fono: {{ telefono }}</h3>
+<form action="{{ url_for('favorito') }}" method='post'>
 <input type="submit" value="Agregar a favoritos">
+</form>
 {% endblock %}
