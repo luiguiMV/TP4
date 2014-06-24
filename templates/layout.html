@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+
+Tomado y modificado para la tarea 4 de lenguajes de Programación
+
+-->
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Busqueda Apartas</title>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+<meta charset="utf-8">
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="{{ url_for('static', filename='default.css') }}" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body>
+	<div id="fb-root"></div>
+	<!--Links to the login handler-->
+	<div><a style="color:blue" href="login/fb">Ingresar con Facebook</a>.<br></div>
+<!-- start header -->
+<div id="header">
+	<div id="logo">
+		<h1><a href="#">B&uacute;squeda de apartamentos</a></h1>
+		<h2>By us</h2>
+	</div>
+	<div id="menu">
+		<ul>
+			<li class="active"><a href="#" accesskey="1" title="">Inicio</a></li>
+			<li><a href="{{url_for('publicar')}}" accesskey="2" title="">Crea tu anuncio</a></li>
+			<li><a href="{{url_for('buscar')}}" accesskey="3" title="">Encuentra</a></li>
+			<li><a href="#" accesskey="4" title="">Favoritos</a></li>
+			<li><a href="#" accesskey="5" title="">About</a></li>
+		</ul>
+	</div>
+</div>
+<!-- end header -->
+
+<!-- start page -->
+<div id="page">
+	<!-- start content -->
+	{% block content %}{% endblock %}
+<!-- end page -->
+</div>
+</html>

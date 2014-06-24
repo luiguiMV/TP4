@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Resultados de la b&uacute;squeda</h1>
+<ul>
+    <ul>
+    {% for item in lista %}
+        <li><a href="{{url_for('publicacion', titulo=item.titulo)}}">{{ item.titulo }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

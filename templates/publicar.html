@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+{% block content %}
+<!--SCRIPT DE GOOGLEMAPS-->
+
+<style>
+        #map-canvas {
+        height: 300px;
+        margin: 100px;
+        width:500px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script>
+		
+		
+function initialize() {
+  var myLatLng = new google.maps.LatLng(9.8567281,-83.916406);
+  var mapOptions = {
+    zoom: 10,
+    center: myLatLng
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions);
+      
+    google.maps.event.addListener(map, 'click', function(e) {
+    placeMarker(e.latLng, map);
+  });
+}
+
+function placeMarker(position, map) {
+  var marker = new google.maps.Marker({
+    position: position,
+    map: map,
+  });
+  document.getElementById("pos").value = position;
+  map.panTo(position);  
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+<!--SCRIPT DE GOOGLEMAPS-->
+
+
+<h1>Publica tu apartamento</h1>
+<form action="{{ url_for('crearPublicacion') }}" method="post">
+T&iacute;tulo: <input type="text" name="titulo"><br><br>
+Descripci&oacute;n: <textarea name="descripcion"></textarea>
+<h2>Facilidades</h2>
+<input type="checkbox" name="facilidad" value="TV">Televisi&oacute;n
+<input type="checkbox" name="facilidad" value="Luz">Luz 
+<input type="checkbox" name="facilidad" value="Agua">Agua
+<input type="checkbox" name="facilidad" value="Internet">Internet
+<input type="checkbox" name="facilidad" value="Amueblado">Amueblado<br>  
+<h2>Caracter&iacute;sticas</h2>
+<p>Habitaciones <select name='habitaciones'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="mas">M&aacute;s de 5</option>
+</select>
+Ba&ntilde;os <select name='banos'>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="mas">M&aacute;s de 4</option>
+</select>
+Estacionamientos <select name='estacionamientos'>
+  <option value="0">0</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="mas">M&aacute;s de 3</option>
+</select></p>
+Precio: <input type="text" name="precio"><br>
+<h2>Ubicaci&oacute;n:</h2>
+<div id="map-canvas"></div>
+<input type="hidden" name="posicion" id="pos">
+<h2>Contactar a:</h2>
+Correo: <input type="text" name="correo"><br>
+Tel&eacute;fono: <input type="text" name="telefono"><br><br>
+<input type="submit" value="Aceptar">
+</form> 
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h1><a>Encuentra tu pr&oacute;ximo aparta</a></h1>
+<form action="{{ url_for('resultado') }}" method="post">
+<h2>Facilidades</h2>
+<input type="checkbox" name="facilidad" value="TV">Televisi&oacute;n
+<input type="checkbox" name="facilidad" value="Luz">Luz 
+<input type="checkbox" name="facilidad" value="Agua">Agua
+<input type="checkbox" name="facilidad" value="Internet">Internet
+<input type="checkbox" name="facilidad" value="Amueblado">Amueblado<br> 
+<h2>Caracter&iacute;sticas</h2>
+<p>Habitaciones <select name='habitaciones'>
+	<option value="omitir">omitir</option>
+	<option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="mas">M&aacute;s de 5</option>
+</select>
+Ba&ntilde;os <select name='banos'>
+	<option value="omitir">omitir</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="mas">M&aacute;s de 4</option>
+</select>
+Estacionamientos <select name='estacionamientos'>
+	<option value="omitir">omitir</option>
+    <option value="0">0</option>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="mas">M&aacute;s de 3</option>
+</select></p>
+Precio de: <input type="text" name="precio_inicial"> a <input type="text" name="precio_final" ><br> 
+Ubicacion: aqui se guinda ud<br><br>
+<input type="submit" value="Buscar"><formaction="{{ url_for('resultado') }}" method="post"></form>
+</form>
+{% endblock %}
