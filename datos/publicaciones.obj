@@ -5,7 +5,7 @@ p1
 (dp2
 S'habitaciones'
 p3
-V1
+V3
 p4
 sS'precio'
 p5
@@ -13,15 +13,15 @@ V250000
 p6
 sS'banos'
 p7
-V1
+V2
 p8
 sS'correo'
 p9
-Vrasta@incofer.com
+Vcartago@cr.com
 p10
 sS'ubicacion'
 p11
-V(9.853073794969285, -83.88198852539062)
+V(9.874975316739532, -83.92181396484375)
 p12
 sS'descripcion'
 p13
@@ -34,18 +34,18 @@ p16
 sS'facilidades'
 p17
 (lp18
-VLuz
+VTV
 p19
-aVAgua
+aVLuz
 p20
-aVInternet
+aVAmueblado
 p21
 asS'telefono'
 p22
-V800-yodo
+V555-8888
 p23
 sS'estacionamientos'
 p24
-V0
+V1
 p25
 sba.

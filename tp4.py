@@ -82,6 +82,7 @@ def crearPublicacion():
 	estacionamientos = request.form['estacionamientos']
 	precio = request.form['precio']
 	ubicacion = request.form['posicion']
+	print ubicacion
 	correo = request.form['correo']
 	telefono = request.form['telefono']
 	nuevaPublicacion = backend.publicacion(titulo,descripcion, facilidades, habitaciones, banos, estacionamientos, precio, ubicacion, correo, telefono)
